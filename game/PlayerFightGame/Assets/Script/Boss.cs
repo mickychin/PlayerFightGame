@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    float horizontal;
-    float vertical;
     public float speed;
 
     // Start is called before the first frame update
@@ -17,8 +15,12 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        float horizontal = 0f;
+        float vertical = 0f;
+        if (Input.GetKey(KeyCode.A)) horizontal = -1f;
+        if (Input.GetKey(KeyCode.D)) horizontal = 1f;
+        if (Input.GetKey(KeyCode.W)) vertical = 1f;
+        if (Input.GetKey(KeyCode.S)) vertical = -1f;
 
         Vector3 moveDir = new Vector3(horizontal, vertical).normalized;
         transform.position += moveDir * speed * Time.deltaTime;
