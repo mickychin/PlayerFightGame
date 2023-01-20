@@ -12,12 +12,13 @@ public class Player : MonoBehaviour
     public GameObject bullet;
     public Transform startingPoint;
     public float BulletSpeed;
+    public float fireRate;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Invoke("PewPew", 1f);
+        Invoke("PewPew", fireRate);
     }
 
     // Update is called once per frame
@@ -39,6 +40,6 @@ public class Player : MonoBehaviour
         Rigidbody2D bulRB = bullets.GetComponent<Rigidbody2D>();
         bulRB.AddForce(startingPoint.up * BulletSpeed, ForceMode2D.Impulse);
         bullet.GetComponent<Rigidbody2D>();
-        Invoke("PewPew", 1f);
+        Invoke("PewPew", fireRate);
     }
 }
