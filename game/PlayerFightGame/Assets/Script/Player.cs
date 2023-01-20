@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
 
     [Header("Bullet")]
     public GameObject bullet;
+    public Transform startingPoint;
     public float BulletSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,9 @@ public class Player : MonoBehaviour
 
     void PewPew()
     {
-        GameObject bullets = Instantiate(bullet, transform.position, transform.rotation);
+        GameObject bullets = Instantiate(bullet, startingPoint.position, startingPoint.rotation);
+        Rigidbody2D bulRB = bullets.GetComponent<Rigidbody2D>();
+        bulRB.AddForce(startingPoint.up * BulletSpeed, ForceMode2D.Impulse);
         bullet.GetComponent<Rigidbody2D>();
         Invoke("PewPew", 1f);
     }
