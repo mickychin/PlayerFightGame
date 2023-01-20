@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    Rigidbody2D rb;
     public GameObject Boss;
     public Vector2 lookDir;
+
+    [Header("Bullet")]
+    public GameObject bullet;
+    public float BulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
+        Invoke("PewPew", 1f);
     }
 
     // Update is called once per frame
@@ -21,6 +27,14 @@ public class Player : MonoBehaviour
     void lookAtBoss()
     {
         lookDir = Boss.transform.position - transform.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x);
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
+    }
+
+    void PewPew()
+    {
+        GameObject bullets = Instantiate(bullet, transform.position, transform.rotation);
+        bullet.GetComponent<Rigidbody2D>();
+        Invoke("PewPew", 1f);
     }
 }
