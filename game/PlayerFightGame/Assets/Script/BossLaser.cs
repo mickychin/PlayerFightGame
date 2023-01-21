@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BossLaser : MonoBehaviour
 {
+    public bool isShooting = false;
+    public float shootingSecond;
+    public GameObject ParticleCharge;
     [SerializeField] private float defDistanceRay = 100; //Default Distance Laser
     public Transform firePoint;
     public LineRenderer linerender;
@@ -15,7 +18,33 @@ public class BossLaser : MonoBehaviour
 
     private void Update()
     {
-        ShootLaser();
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            GameObject particle = Instantiate(ParticleCharge, firePoint.position, Quaternion.identity);
+            Destroy(particle, 2f);
+            StartCoroutine(ShootFor());
+        }
+        if (isShooting)
+        {
+            linerender.positionCount = 2;
+            ShootLaser();
+        }
+        else
+        {
+            linerender.positionCount = 0;
+        }
+    }
+
+    IEnumerator ShootFor()
+    {
+        FindObjectOfType<Boss>().canMove = false;
+        FindObjectOfType<Boss>().canRotate = false;
+        yield return new WaitForSeconds(2f);
+        isShooting = true;
+        FindObjectOfType<Boss>().canRotate = true;
+        yield return new WaitForSeconds(shootingSecond);
+        isShooting = false;
+        FindObjectOfType<Boss>().canMove = true;
     }
 
     void ShootLaser()

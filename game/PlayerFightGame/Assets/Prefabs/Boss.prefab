@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 85342bb3a537bd9469c2e82f76afd92b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 604c52ee9c9ba6e47a2bdd7a12f4911b, type: 3}
   m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!120 &2294039778808306749
@@ -102,7 +102,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 449cb94e50a5b9541b446178081b54e8, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -155,9 +155,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.5547921, b: 0, a: 1}
+      key1: {r: 1, g: 0.5547921, b: 0, a: 1}
+      key2: {r: 1, g: 0.5547921, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -165,7 +165,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -202,6 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2336c26382aba584fb7b4d4d22cf0d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShooting: 0
+  shootingSecond: 2
+  ParticleCharge: {fileID: 0}
   defDistanceRay: 100
   firePoint: {fileID: 2294039779008508676}
   linerender: {fileID: 2294039778808306749}
@@ -309,7 +312,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 85342bb3a537bd9469c2e82f76afd92b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 604c52ee9c9ba6e47a2bdd7a12f4911b, type: 3}
   m_Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -317,7 +320,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2294039779062396747
@@ -332,6 +335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c26b2fe8844a3742bf7786640f6cf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRotate: 1
+  canMove: 1
   rotateSpeed: 0.1
   speed: 3
 --- !u!61 &2294039779062396749

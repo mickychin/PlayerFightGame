@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public BoxCollider2D AllCollider;
     public bool invulnerable = false;
     Rigidbody2D rb;
     public GameObject Boss;
