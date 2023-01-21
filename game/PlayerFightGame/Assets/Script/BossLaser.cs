@@ -23,6 +23,10 @@ public class BossLaser : MonoBehaviour
         if(Physics2D.Raycast(myTranform.position, transform.right))
         {
             RaycastHit2D _hit = Physics2D.Raycast(myTranform.position, transform.right);
+            if (_hit.collider.CompareTag("Player") && FindObjectOfType<Player>().invulnerable == false)
+            {
+                FindObjectOfType<Player>().StartCoroutine("TakeDamage");
+            }
             Draw2DRay(firePoint.position, _hit.point);
         }
         else

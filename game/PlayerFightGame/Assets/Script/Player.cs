@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool invulnerable = false;
     Rigidbody2D rb;
     public GameObject Boss;
     public Vector2 lookDir;
@@ -49,5 +50,13 @@ public class Player : MonoBehaviour
         bulRB.AddForce(startingPoint.up * BulletSpeed, ForceMode2D.Impulse);
         bullet.GetComponent<Rigidbody2D>();
         Invoke("PewPew", fireRate);
+    }
+
+    public IEnumerator TakeDamage()
+    {
+        invulnerable = true;
+        FindObjectOfType<PlayerHp>().TakeDamage(1);
+        yield return new WaitForSeconds(1f);
+        invulnerable = false;
     }
 }
