@@ -5,11 +5,12 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public float speed;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,8 @@ public class Boss : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) vertical = -1f;
 
         Vector3 moveDir = new Vector3(horizontal, vertical).normalized;
-        transform.position += moveDir * speed * Time.deltaTime;
+        rb.velocity = moveDir * speed;
+        //transform.position += moveDir * speed * Time.deltaTime;
 
     }
 }

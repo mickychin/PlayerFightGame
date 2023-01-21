@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     public GameObject Boss;
     public Vector2 lookDir;
+    public float distancbetwBoss;
+    public float MoveSPeed;
 
     [Header("Bullet")]
     public GameObject bullet;
@@ -24,7 +26,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(startingPoint.up);
         lookAtBoss();
+        distancbetwBoss = Vector2.Distance(transform.position, Boss.transform.position);
+        if (distancbetwBoss > 6)
+        {
+            transform.position += startingPoint.up * MoveSPeed;
+        }
     }
 
     void lookAtBoss()
