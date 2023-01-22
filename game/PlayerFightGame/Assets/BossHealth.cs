@@ -9,6 +9,7 @@ public class BossHealth : MonoBehaviour
     public int bossHealth;
     public healthbar healthbar;
     public GameObject DeathEffect;
+    public GameObject DeadBody;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class BossHealth : MonoBehaviour
         if(bossHealth < 1)
         {
             Instantiate(DeathEffect,transform.position, transform.rotation);
+            Instantiate(DeadBody,transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
