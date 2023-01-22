@@ -6,6 +6,10 @@ public class Bullet : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.tag == "Boss")
+        {
+            FindObjectOfType<BossHealth>().TakeDamage(5);
+        }
         Destroy(gameObject);
     }
 }

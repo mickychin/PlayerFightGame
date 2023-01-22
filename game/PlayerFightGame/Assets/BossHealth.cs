@@ -8,6 +8,7 @@ public class BossHealth : MonoBehaviour
     public int BossMaxHealth;
     public int bossHealth;
     public healthbar healthbar;
+    public GameObject DeathEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +19,14 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(bossHealth < 1)
+        {
+            Instantiate(DeathEffect);
+            Destroy(gameObject);
+        }
     }
 
-    void TakeDamage(int Damage)
+    public void TakeDamage(int Damage)
     {
         bossHealth = bossHealth - Damage;
         healthbar.SetHealth(bossHealth);
