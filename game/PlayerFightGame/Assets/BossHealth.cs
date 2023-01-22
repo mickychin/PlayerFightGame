@@ -21,7 +21,7 @@ public class BossHealth : MonoBehaviour
     {
         if(bossHealth < 1)
         {
-            Instantiate(DeathEffect);
+            Instantiate(DeathEffect,transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
