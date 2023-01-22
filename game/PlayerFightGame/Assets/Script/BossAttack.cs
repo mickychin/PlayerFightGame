@@ -19,6 +19,7 @@ public class BossAttack : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(this.gameObject.name);
         if(Input.GetKeyDown(FireballKey))
         {
             Instantiate(Fireball,transform.position, transform.rotation);

@@ -3106,6 +3106,18 @@ MonoBehaviour:
   startingPoint: {fileID: 1784211728}
   BulletSpeed: 4
   fireRate: 1.5
+--- !u!114 &1776421362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776421360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1b01533ab7a7b4aa3ff890bc142007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1776421363
 BoxCollider2D:
   m_ObjectHideFlags: 0

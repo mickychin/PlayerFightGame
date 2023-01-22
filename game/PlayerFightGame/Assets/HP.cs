@@ -16,13 +16,13 @@ public class HP : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         Health -= Damage;
+        healthbar.SetHealth(Health);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "BossAttack")
         {
             TakeDamage(1);
-            healthbar.SetHealth(Health);
         }
     }
 }
