@@ -3180,6 +3180,8 @@ MonoBehaviour:
   MaxHealth: 1000
   Health: 1000
   healthbar: {fileID: 190672209}
+  DeathEffect: {fileID: 163228419145193942, guid: f0ab4825b0552b04fb5572aba8596994,
+    type: 3}
 --- !u!1 &1784211727
 GameObject:
   m_ObjectHideFlags: 0

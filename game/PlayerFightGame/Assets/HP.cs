@@ -8,6 +8,7 @@ public class HP : MonoBehaviour
     public int MaxHealth = 100;
     public int Health = 100;
     public healthbar healthbar;
+    public GameObject DeathEffect;
 
     void Start()
     {
@@ -23,6 +24,14 @@ public class HP : MonoBehaviour
         if(collision.gameObject.tag == "BossAttack")
         {
             TakeDamage(1);
+        }
+    }
+    void Update()
+    {
+        if(Health < 1)
+        {
+            Instantiate(DeathEffect,transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }
