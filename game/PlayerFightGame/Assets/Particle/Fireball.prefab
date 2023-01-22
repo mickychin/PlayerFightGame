@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7001142287764604195}
   m_Layer: 0
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3679,7 +3679,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.9999999
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4928,6 +4928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569794128294607986, guid: bd28476963b7f0b44b0c47a3a035e1d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd28476963b7f0b44b0c47a3a035e1d2, type: 3}

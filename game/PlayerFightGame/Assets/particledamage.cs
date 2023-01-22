@@ -10,7 +10,7 @@ public class particledamage : MonoBehaviour
     {
         if (other.layer == playerLayer)
         {
-            HP.HealthDetect = HP.HealthDetect - 1;
+            //HP.HealthDetect = HP.HealthDetect - 1;
         }
     }
 }
