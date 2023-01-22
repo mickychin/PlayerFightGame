@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &63042915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2012841839522853124, guid: a2a98c5e6e1d15c4895dd2a48857d550,
+    type: 3}
+  m_PrefabInstance: {fileID: 2012841840192044217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &182385433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,6 +2286,28 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5083764690828318118}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1776421361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776421360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86496bde4baab2941b41c115f730fe45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllCollider: {fileID: 1776421363}
+  invulnerable: 0
+  Boss: {fileID: 63042915}
+  lookDir: {x: 0, y: 0}
+  distancbetwBoss: 0
+  MoveSPeed: 0
+  bullet: {fileID: 138984457939984866, guid: e2c5ac36ef102fe47ad219e452d7e81e, type: 3}
+  startingPoint: {fileID: 1776421364}
+  BulletSpeed: 3
+  fireRate: 1
 --- !u!61 &1776421363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2306,6 +2334,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!4 &1776421364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7794717424116054160, guid: c891194b1b606b84dbbafc0d0fea90d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5083764690828318118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1776421365
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776421360}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1901262788
 GameObject:
   m_ObjectHideFlags: 0
@@ -10349,6 +10404,12 @@ PrefabInstance:
       propertyPath: FirebeamKey
       value: 102
       objectReference: {fileID: 0}
+    - target: {fileID: 841361359988712669, guid: 7b0cb58b868bb044194e7d4e838bcbed,
+        type: 3}
+      propertyPath: FirebeamCharge
+      value: 
+      objectReference: {fileID: 5146822345972396636, guid: dc84002b96a8b0647a05da323d4220dd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b0cb58b868bb044194e7d4e838bcbed, type: 3}
 --- !u!1001 &2012841840192044217

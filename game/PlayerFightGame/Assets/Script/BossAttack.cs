@@ -14,6 +14,7 @@ public class BossAttack : MonoBehaviour
 
     [Header("Firebeam")]
     public KeyCode FirebeamKey;
+    public GameObject FirebeamCharge;
     public GameObject Firebeam;
 
     void Update()
@@ -28,7 +29,14 @@ public class BossAttack : MonoBehaviour
         }
         if(Input.GetKeyDown(FirebeamKey))
         {
-            Instantiate(Firebeam,transform.position, transform.rotation, gameObject.transform);
+            Instantiate(FirebeamCharge,transform.position, transform.rotation, gameObject.transform);
+            StartCoroutine(FirebeamCharging());
         }
+    }
+
+    IEnumerator FirebeamCharging()
+    {
+        yield return new WaitForSeconds(2); // wait for 2 seconds
+        Instantiate(Firebeam,transform.position, transform.rotation, gameObject.transform);
     }
 }
