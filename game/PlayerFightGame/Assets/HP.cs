@@ -15,5 +15,6 @@ public class HP : MonoBehaviour
     void Update()
     {
         Health = HealthDetect;
+        Debug.Log(HealthDetect);
     }
 }
