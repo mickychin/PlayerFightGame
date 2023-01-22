@@ -12,6 +12,10 @@ public class BossAttack : MonoBehaviour
     public KeyCode FirebreathKey;
     public GameObject Firebreath;
 
+    [Header("Firebeam")]
+    public KeyCode FirebeamKey;
+    public GameObject Firebeam;
+
     void Update()
     {
         if(Input.GetKeyDown(FireballKey))
@@ -21,6 +25,10 @@ public class BossAttack : MonoBehaviour
         if(Input.GetKeyDown(FirebreathKey))
         {
             Instantiate(Firebreath,transform.position, transform.rotation, gameObject.transform);
+        }
+        if(Input.GetKeyDown(FirebeamKey))
+        {
+            Instantiate(Firebeam,transform.position, transform.rotation, gameObject.transform);
         }
     }
 }

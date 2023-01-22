@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossLaser : MonoBehaviour
 {
+    public GameObject Laser;
     public bool isShooting = false;
     public float shootingSecond;
     public GameObject ParticleCharge;
@@ -56,11 +57,12 @@ public class BossLaser : MonoBehaviour
             {
                 FindObjectOfType<Player>().StartCoroutine("TakeDamage");
             }
-            Draw2DRay(firePoint.position, _hit.point);
+            //Draw2DRay(firePoint.position, _hit.point);
         }
         else
         {
-            Draw2DRay(firePoint.position, firePoint.transform.right * defDistanceRay);
+            //Draw2DRay(firePoint.position, firePoint.transform.right * defDistanceRay);
+            Instantiate(Laser,transform.position, transform.rotation, gameObject.transform);
         }
     }
 
